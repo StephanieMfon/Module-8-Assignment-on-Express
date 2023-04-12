@@ -10,12 +10,12 @@ app.use(logger("dev"));
 app.use(express.json());
 
 // get request controller
-app.post("/users", (req, res) => {
-  const user = req.body;
+app.get("/users/:name/:age/:sex", (req, res) => {
+  const user = req.params;
   res.status(200).json({
     status: "success",
     data: {
-      user: user,
+      user,
     },
   });
 });
