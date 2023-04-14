@@ -9,7 +9,7 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.json());
 
-// get request controller
+//request handler that adds a user user object to the request
 app.get("/users/:name/:age/:sex", (req, res) => {
   const user = req.params;
   res.status(200).json({
